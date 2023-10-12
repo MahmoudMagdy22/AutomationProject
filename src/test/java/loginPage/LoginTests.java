@@ -1,21 +1,16 @@
-package t;
+package loginPage;
 
+import base.BaseTests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-
 import static org.testng.Assert.assertTrue;
 
-public class T {
-    @Test
+public class LoginTests extends BaseTests {
+    @Test(priority = 1)
 
     public void validSenario(){
-        //set webdriver
-        WebDriver driver = new ChromeDriver();
-        //get url
-        driver.get("https://the-internet.herokuapp.com/");
-
 
         // get the link
         driver.findElement(By.cssSelector("a[href='/login']")).click();
@@ -30,18 +25,11 @@ public class T {
         // to use  the assertequal fun with () then use static
         assertTrue(actualResult.contains(expectedResult));
 
-        driver.quit();
+         }
 
-    }
-
-    @Test
+    @Test(priority=2)
 
     public void invalidUser(){
-        //set webdriver
-        WebDriver driver = new ChromeDriver();
-        //get url
-        driver.get("https://the-internet.herokuapp.com/");
-
 
         // get the link
         driver.findElement(By.xpath("//*[@id=\"content\"]/ul/li[21]/a")).click();
@@ -56,15 +44,10 @@ public class T {
         // to use  the assertequal fun with () then use static
         assertTrue(actualResult.contains(expectedResult));
 
-        driver.quit();}
-    @Test
+        }
+    @Test(priority= 3)
 
     public void invalidpass(){
-        //set webdriver
-        WebDriver driver = new ChromeDriver();
-        //get url
-        driver.get("https://the-internet.herokuapp.com/");
-
 
         // get the link
         driver.findElement(By.xpath("//*[@id=\"content\"]/ul/li[21]/a")).click();
@@ -79,6 +62,6 @@ public class T {
         // to use  the assertequal fun with () then use static
         assertTrue(actualResult.contains(expectedResult));
 
-        driver.quit();}
+        }
 
 }
