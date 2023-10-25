@@ -10,8 +10,10 @@ public class UploadFile {
     }
     private By UpLoadFileLink = By.id("file-upload");
     private By SubmitButton = By.id("file-submit");
-    public void SendFileToUpLoad(){
-        driver.findElement(UpLoadFileLink).sendKeys("C:\\Users\\Mahmoud\\Desktop\\uploadsuccessfully.txt");
+    private   String filepath= "C:\\Users\\Mahmoud\\Desktop\\uploadsuccessfully.txt";
+    public String SendFileToUpLoad(){
+        driver.findElement(UpLoadFileLink).sendKeys(filepath);
+        return filepath;
 
     }
     public FileUpLoaded ClickSubmit(){

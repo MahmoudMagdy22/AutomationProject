@@ -36,6 +36,17 @@ public class HomePage {
         return new ForgetPassWord(driver);
 
     }
+    private final By DynamicLoading= By.xpath("//a[normalize-space()='Dynamic Loading']");
+
+    public DynamicLoadPage ClickOnDynamicLoadingPage(){
+        driver.findElement(DynamicLoading).click();
+        return  new DynamicLoadPage(driver);
+    }
+    private final By dropDown= By.xpath("//a[normalize-space()='Dropdown']");
+    public DropDownList clickOnDropDown(){
+       driver.findElement(dropDown).click();
+       return new DropDownList (driver);
+    }
     }
 
 

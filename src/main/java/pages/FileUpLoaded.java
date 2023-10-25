@@ -10,6 +10,8 @@ public class FileUpLoaded {
     }
     private  final By UploadValidation = (By.xpath("//div[@id='uploaded-files']"));
 
+
+
     public String ValidationText(){
         return driver.findElement(UploadValidation).getText();
            }
